@@ -1,5 +1,2 @@
-require "prismatic_spray/version"
-
-module PrismaticSpray
-  # Your code goes here...
-end
+require_relative 'prismatic_spray/version'
+require_relative 'prismatic_spray/color'
