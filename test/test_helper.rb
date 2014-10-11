@@ -1,8 +1,7 @@
+require './lib/prismatic_spray'
 require 'minitest/autorun'
 require 'minitest/unit'
 require 'minitest/pride'
-
-require './lib/prismatic_spray'
 
 class MiniTest::Unit::TestCase
   def assert_change(block)
