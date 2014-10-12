@@ -52,5 +52,18 @@ class ColorTest < MiniTest::Unit::TestCase
         assert_equal @color.rgb, { red: 0, green: 0, blue: 0 }
       end
     end
+
+    describe 'when initialized with incomplete color data' do
+      before do
+        @color = PrismaticSpray::Color.new({
+          name: "test",
+          rgb:  { red: 255 }
+        })
+      end
+
+      it "should set the missing color values to black" do
+        assert_equal @color.rgb, { red: 255, green: 0, blue: 0 }
+      end
+    end
   end
 end
