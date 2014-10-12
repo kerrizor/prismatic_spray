@@ -1,13 +1,24 @@
+require_relative './color_list'
+
 module PrismaticSpray
   class Color
+
+    include ColorList
+
     attr_reader :name
 
     def initialize(options)
       @name = options[:name]
 
-      @red   = options[:rgb][:red]
-      @green = options[:rgb][:green]
-      @blue  = options[:rgb][:blue]
+      if known_color = KNOWN_COLORS[@name]
+        @red   = known_color[:red]
+        @green = known_color[:green]
+        @blue  = known_color[:blue]
+      else
+        @red   = options[:rgb][:red]
+        @green = options[:rgb][:green]
+        @blue  = options[:rgb][:blue]
+      end
     end
 
     def rgb
