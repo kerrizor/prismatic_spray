@@ -11,13 +11,11 @@ module PrismaticSpray
       @name = options[:name]
 
       if known_color = KNOWN_COLORS[@name]
-        @red   = known_color[:red]
-        @green = known_color[:green]
-        @blue  = known_color[:blue]
+        set_rgb_with(known_color)
+      elsif rgb_hash = options[:rgb]
+        set_rgb_with(rgb_hash)
       else
-        @red   = options[:rgb][:red]
-        @green = options[:rgb][:green]
-        @blue  = options[:rgb][:blue]
+        set_rgb_with({})
       end
     end
 
@@ -41,6 +39,12 @@ module PrismaticSpray
     end
 
     private
+
+    def set_rgb_with(color_values)
+      @red   = color_values[:red]   || 0
+      @green = color_values[:green] || 0
+      @blue  = color_values[:blue]  || 0
+    end
 
     def rgb_to_cmyk(value, black)
       ((1.0 - value - black)/(1.0 - black)).round(4)

@@ -40,5 +40,17 @@ class ColorTest < MiniTest::Unit::TestCase
                                     black:   0.0 }
       end
     end
+
+    describe 'when initialized with an unknown color name' do
+      before do
+        @color = PrismaticSpray::Color.new({
+          name: "unknown_test_color"
+        })
+      end
+
+      it "should set the RGB value to black" do
+        assert_equal @color.rgb, { red: 0, green: 0, blue: 0 }
+      end
+    end
   end
 end
