@@ -38,6 +38,10 @@ module PrismaticSpray
       end
     end
 
+    def hex
+      "#{@red.to_s(16)}#{@green.to_s(16)}#{@blue.to_s(16)}"
+    end
+
     private
 
     def set_rgb_with(color_values)

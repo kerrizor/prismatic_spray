@@ -20,6 +20,10 @@ class ColorTest < MiniTest::Unit::TestCase
                                     yellow:  0.0588,
                                     black:   0.0 }
       end
+
+      it "should return a hex value calculated from the given RGB" do
+        assert_equal @color.hex, "f0fff0"
+      end
     end
 
     describe 'when initialized with a known color name' do
