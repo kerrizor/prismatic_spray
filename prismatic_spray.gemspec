@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = PrismaticSpray::VERSION
   spec.authors       = ["Kerri Miller"]
   spec.email         = ["kerrizor@kerrizor.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A library of standard, named colors in a variety of formats.}
+  spec.description   = %q{A library of named colors, made available in a variety of colorspace formats, such as RGB, Hex, CYMK, etc.}
+  spec.homepage      = "https://github.com/kerrizor/prismatic_spray"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
