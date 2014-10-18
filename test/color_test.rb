@@ -21,8 +21,8 @@ class ColorTest < MiniTest::Unit::TestCase
                                     black:   0.0 }
       end
 
-      it "should return a hex value calculated from the given RGB" do
-        assert_equal @color.hex, "f0fff0"
+      it "should return an HSL value calculated from the given RGB" do
+        assert_equal @color.hsl, { red: 120, green: 100, blue: 97 }
       end
     end
 

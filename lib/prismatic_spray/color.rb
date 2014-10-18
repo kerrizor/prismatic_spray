@@ -42,6 +42,23 @@ module PrismaticSpray
       "#{@red.to_s(16)}#{@green.to_s(16)}#{@blue.to_s(16)}"
     end
 
+    def hsl
+      @hsl ||= begin
+        red   = @red/255.0
+        green = @green/255.0
+        blue  = @blue/255.0
+
+        max = [red, green, blue].max
+        min = [red, green, blue].min
+
+        difference = (max - min)
+        luminosity = (max + min) / 2.0
+
+
+      end
+
+    end
+
     private
 
     def set_rgb_with(color_values)
