@@ -22,7 +22,7 @@ class ColorTest < MiniTest::Unit::TestCase
       end
 
       it "should return an HSL value calculated from the given RGB" do
-        assert_equal @color.hsl, { red: 120, green: 100, blue: 97 }
+        assert_equal @color.hsl, { hue: 120, saturation: 100, luminosity: 97 }
       end
     end
 
